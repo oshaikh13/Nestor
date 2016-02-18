@@ -1,0 +1,18 @@
+<div class='signUpBody' id='singup'>
+  <form ng-submit="signup()">
+    <div class="header">
+       <p>Sign Up For nestor</p>
+    </div>
+    <div class="description">
+      <p>A crowdsourced thermostat</p>
+    </div>
+    <div class="input">
+      <p><input type="text" class="button" id="email" name="email" placeholder="Username" ng-model="user.username"></p>
+      <p><input type="password" class="button" id="email" name="password" placeholder="Password" ng-model="user.password"></p>
+      <p><input type="text" class="button" id="email" name="nestemail" placeholder="Nest Email" ng-model="user.nestUsername"></p>
+      <p><input type="password" class="button" id="email" name="password" placeholder="Nest Password" ng-model="user.nestPassword"></p>
+      <input type="submit" class="button" id="submit" value="SIGN UP">
+    </div>
+    <a href="#/signin">Log In</a>
+  </form>
+</div>

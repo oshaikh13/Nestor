@@ -1,0 +1,36 @@
+<ion-view view-title="Vote | {{thermoId.slice(thermoId.length - 4)}}">
+  <ion-content>
+    <div class="card">
+        <div class="item item-text-wrap">
+            <div class="votewarning"><strong>Thermostatus</strong></div>
+            <div class="currentTempHeader">Target Temperature</div>
+            <div class="currentTemp">
+                {{ thermostats[thermoId].targetTemp }}&deg;
+            </div>
+
+            <div class="currentTempHeader">Current Temperature</div>
+            <div class="currentTemp">
+                {{ thermostats[thermoId].currentTemp }}&deg;
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item item-text-wrap">
+            <div class="votewarning"><strong>Current Votes</strong></div>
+            <div class="currentTempHeader" ng-show="thermostats[thermoId].votes.length < 1">
+                No Current Votes
+            </div>
+            <div ng-repeat="voter in thermostats[thermoId].votes">
+                <div class="vote-temp">{{ voter.temp }}&deg;</div>
+                <div class="vote-user">{{ voter.username }}</div>   
+            </div>
+        </div>
+    </div>
+    <div class="vote-button">
+        <button class="button button-block button-royal" ng-click='vote()'>
+            Add Vote!
+        </button>
+    </div>
+  </ion-content>
+</ion-view>
